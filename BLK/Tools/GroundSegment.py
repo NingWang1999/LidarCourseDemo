@@ -1,3 +1,6 @@
+from colorsys import yiq_to_rgb
+
+
 def PlaneSegmentation(pcd):
     plane_model, inliers = pcd.segment_plane(distance_threshold=0.5,ransac_n=5,num_iterations=10000)
     [a, b, c, d] = plane_model
@@ -15,24 +18,39 @@ def PlaneSegmentation(pcd):
 
 def FoundZmin(xyz,pillar_size):
     import numpy as np
+    import math
     print('Find the lowest point in pillars')
-    rows = [x for x in np.arange(np.min(xyz[:, 0]), np.max(xyz[:, 0]), pillar_size)]
-    cols = [y for y in np.arange(np.min(xyz[:, 1]), np.max(xyz[:, 1]), pillar_size)]
-    ground = []
+    # rows = [x for x in np.arange(np.min(xyz[:, 0]), np.max(xyz[:, 0]), pillar_size)]
+    # cols = [y for y in np.arange(np.min(xyz[:, 1]), np.max(xyz[:, 1]), pillar_size)]
+    # ground = []
+    #
+    # for i,r in enumerate(rows):
+    #     for j,c in enumerate(cols):
+    #         index = (xyz[:, 0] >= r) & (xyz[:, 0] < r + pillar_size) & (xyz[:, 1] >= c) & (xyz[:, 1] <= c + pillar_size)
+    #         pillar = xyz[index]
+    #         try:
+    #             index = pillar[:, 2] == np.min(pillar[:, 2])
+    #             downpoint = pillar[index]
+    #             ground.extend(downpoint)
+    #         except:
+    #             continue
 
-    for i,r in enumerate(rows):
-        for j,c in enumerate(cols):
-            index = (xyz[:, 0] >= r) & (xyz[:, 0] < r + pillar_size) & (xyz[:, 1] >= c) & (xyz[:, 1] <= c + pillar_size)
-            pillar = xyz[index]
-            try:
-                index = pillar[:, 2] == np.min(pillar[:, 2])
-                downpoint = pillar[index]
-                ground.extend(downpoint)
-            except:
-                continue
+    xy_min = xyz[:, :2].min(axis=0)
+    grid_index = np.floor(
+        (xyz[:, :2] - xy_min) / pillar_size
+    ).astype(np.int64)
 
+    order = np.lexsort((
+        xyz[:, 2],
+        grid_index[:, 1],
+        grid_index[:, 0],
+    ))
+    sorted_grid = grid_index[order]
 
-    return np.array(ground)
+    keep = np.ones(len(order), dtype=bool)
+    keep[1:] = np.any(sorted_grid[1:] != sorted_grid[:-1], axis=1)
+
+    return xyz[order[keep]]
 
 def PoissonSurfaceFilter(pcd,pillar_size,threshold=0.3):
     import numpy as np
