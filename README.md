@@ -5,14 +5,14 @@
 | CloudCompare | https://www.cloudcompare.org/release/index.html （选择 Stable 版本）                                                          | https://blog.csdn.net/m0_59079614/article/details/130422026 |
 | Anaconda     | 官网：https://www.anaconda.com/download/success?reg=skipped<br/>镜像：https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/  | https://blog.csdn.net/Natsuago/article/details/143081283    |
 | PyCharm      | https://www.jetbrains.com/zh-cn/pycharm/download/?section=windows                                                           | 软件安装：https://www.jetbrains.com/zh-cn/help/pycharm/installation-guide.html#silent<br/>Student Pack认证：https://www.jetbrains.com/zh-cn/academy/student-pack/  |
-| LeWos        | https://github.com/dwang520/LeWoS-py                                                                                                                              |https://github.com/dwang520/LeWoS-py                                                             |
+| LeWoS        | https://github.com/dwang520/LeWoS-py                                                                                                                              |https://github.com/dwang520/LeWoS-py                                                             |
 
 注：已有 Anaconda/Miniconda 的同学，不用重新安装 Anaconda，但需要确保 conda 版本不低于 26.1.1；已有 VSCode 等 IDE 的同学，不用额外安装 PyCharm。
 
 # 2 Conda 环境配置
 
 ```shell
-# 打开 cmd 终端或 Powershell，检查 conda 版本
+# 打开 cmd 终端或 Powershell，检查 conda 版本 >= 26.1.0
 conda --version
 
 # 添加镜像源（已经配置过 conda 的跳过此步） 
@@ -39,3 +39,12 @@ pip install ipywidgets
 # 安装 LeWoS
 pip install .\LeWoS-py-main\
 ```
+
+# 3 下载数据
+
+数据链接（北大网盘）：https://disk.pku.edu.cn/link/AA5B0008D43A634BEEA73C12852CDF67E3
+
+- **BLK 数据**：BLK_small.laz
+- **Faro 数据**：Faro_DAG_clip.las
+
+将数据下载后，放入项目根目录下的 Data 文件夹中
