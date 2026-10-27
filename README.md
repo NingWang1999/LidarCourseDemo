@@ -34,4 +34,7 @@ conda activate lidar
 # 安装 ipykernel 和 ipywidgets，用于 Jupyter
 pip install ipykernel
 pip install ipywidgets
+
+# 安装 LeWoS
+pip install .\LeWoS-py-main\
 ```
