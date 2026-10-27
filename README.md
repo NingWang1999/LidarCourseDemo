@@ -7,12 +7,12 @@
 | PyCharm      | https://www.jetbrains.com/zh-cn/pycharm/download/?section=windows                                                           | 软件安装：https://www.jetbrains.com/zh-cn/help/pycharm/installation-guide.html#silent<br/>Student Pack认证：https://www.jetbrains.com/zh-cn/academy/student-pack/  |
 | LeWoS        | https://github.com/dwang520/LeWoS-py                                                                                                                              |https://github.com/dwang520/LeWoS-py                                                             |
 
-注：已有 Anaconda/Miniconda 的同学，不用重新安装 Anaconda，但需要确保 conda 版本不低于 26.1.1；已有 VSCode 等 IDE 的同学，不用额外安装 PyCharm。
+注：已有 Anaconda/Miniconda 的同学，不用重新安装 Anaconda；已有 VSCode 等 IDE 的同学，不用额外安装 PyCharm。
 
 # 2 Conda 环境配置
 
 ```shell
-# 打开 cmd 终端或 Powershell，检查 conda 版本 >= 26.1.0
+# 打开 cmd 终端或 Powershell，检查 conda 版本
 conda --version
 
 # 添加镜像源（已经配置过 conda 的跳过此步） 
