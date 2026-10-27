@@ -21,8 +21,6 @@ def laspy2o3d(las):
     x = np.float64(las.x)
     y = np.float64(las.y)
     z = np.float64(las.z)
-    x = x - 440303
-    y = y - 4427159
 
     point_data = np.stack([x, y, z], axis=0).transpose((1, 0))
     pcd = o3d.geometry.PointCloud()
