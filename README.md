@@ -31,6 +31,7 @@ conda env create --file env.yml
 # 激活环境
 conda activate lidar
 
-# 安装 kernel
+# 安装 ipykernel 和 ipywidgets，用于 Jupyter
 pip install ipykernel
+pip install ipywidgets
 ```
