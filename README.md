@@ -36,7 +36,7 @@ conda activate lidar
 pip install ipykernel
 pip install ipywidgets
 
-# 安装 LeWoS
+# 安装 LeWoS，提前将 LeWoS 仓库复制到项目根目录下
 pip install .\LeWoS-py-main\
 ```
 
@@ -44,7 +44,8 @@ pip install .\LeWoS-py-main\
 
 数据链接（北大网盘）：https://disk.pku.edu.cn/link/AA5B0008D43A634BEEA73C12852CDF67E3
 
-- **BLK 数据**：BLK_small.laz
-- **Faro 数据**：Faro_DAG_clip.las
+- **BLK 数据（裁剪后）**：BLK_small.laz
+- **Faro 数据（裁剪后）**：Faro_DAG_clip.las
+- **BLK、Faro 和手持扫描的完整数据** 在 Complete data 文件夹下，有需要的同学可以下载
 
-将数据下载后，放入项目根目录下的 Data 文件夹中
+课程演示只用到裁剪后的数据（BLK_small.laz、Faro_DAG_clip.las）。将数据下载后，放入项目根目录下的 Data 文件夹中即可。
