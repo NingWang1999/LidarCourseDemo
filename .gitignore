@@ -1,2 +1,8 @@
 /Data/*
 /BLK/Output*/*
+*.las
+*.laz
+*.pcd
+*.ply
+LidarData/
+output/

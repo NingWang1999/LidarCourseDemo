@@ -39,8 +39,8 @@ conda activate lidar
 pip install ipykernel
 pip install ipywidgets
 
-# 安装 LeWoS，运行命令前将 LeWoS 仓库复制到项目根目录下
-pip install .\LeWoS-py-main\
+# 安装 LeWoS
+pip install git+https://github.com/dwang520/LeWoS-py.git
 ```
 
 # 3 下载数据
