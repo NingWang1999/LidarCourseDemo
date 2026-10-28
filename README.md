@@ -16,11 +16,13 @@
 conda --version
 
 # 添加镜像源（已经配置过 conda 的跳过此步） 
-conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
-conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free
-conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
-conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/pro
-conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2
+conda config --add channels defaults
+conda config --add channels conda-forge
+conda config --set channel_priority strict
+conda config --set custom_channels.conda-forge https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+conda config --append channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+conda config --append channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
+conda config --append channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2
 
 # 显示镜像链接
 conda config --set show_channel_urls yes
@@ -36,7 +38,7 @@ conda activate lidar
 pip install ipykernel
 pip install ipywidgets
 
-# 安装 LeWoS，提前将 LeWoS 仓库复制到项目根目录下
+# 安装 LeWoS，运行命令前将 LeWoS 仓库复制到项目根目录下
 pip install .\LeWoS-py-main\
 ```
 
