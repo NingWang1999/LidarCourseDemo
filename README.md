@@ -15,19 +15,6 @@
 # 打开 cmd 终端或 Powershell，检查 conda 版本
 conda --version
 
-# 添加镜像源（已经配置过 conda 的跳过此步） 
-conda config --add channels defaults
-conda config --add channels conda-forge
-conda config --set channel_priority strict
-conda config --set custom_channels.conda-forge https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-conda config --append channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
-conda config --append channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
-conda config --append channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2
-
-# 显示镜像链接
-conda config --set show_channel_urls yes
-conda config --show channels
-
 # 通过 conda 创建新的虚拟环境，参数文件是同目录下的 env.yml
 # 如果无法通过文件安装，可以尝试通过 pip 命令手动安装 env.yml 中需要的包
 conda env create --file env.yml

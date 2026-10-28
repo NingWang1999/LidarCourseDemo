@@ -6,3 +6,5 @@
 *.ply
 LidarData/
 output/
+*.pyc
+
