@@ -29,6 +29,7 @@ conda config --set show_channel_urls yes
 conda config --show channels
 
 # 通过 conda 创建新的虚拟环境，参数文件是同目录下的 env.yml
+# 如果无法通过文件安装，可以尝试通过 pip 命令手动安装 env.yml 中需要的包
 conda env create --file env.yml
 
 # 激活环境
